@@ -2,15 +2,12 @@ class Artist
   
   attr_accessor :name, :songs
 
-
-  SONGS = []
-
   def initialize(name)
     @name = name
   end
     
   def songs 
-   songs.all.select { |song| song.artist == self }
+   Songs.all.select { |song| song.artist == name }
   end
   
   def add_song(song)
